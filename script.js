@@ -69,3 +69,84 @@ const evenNumbers = numbers.filter(num => num % 2 === 0);
 const squaredNumbers = evenNumbers.map(num => num * num);
 
 console.log(squaredNumbers); // Εκτυπώνει: [4, 16, 36, 64, 100]
+
+// Example 1: Fetching Data from an API
+console.log('Start fetching data');
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Data fetched:', data);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+console.log('End of script');
+
+// Example 2: Using setTimeout for Delayed Execution
+console.log('Start');
+
+setTimeout(() => {
+  console.log('This is executed after 2 seconds');
+}, 2000);
+
+console.log('End');
+
+// Example 3: Handling User Interactions
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Listener Example</title>
+</head>
+<body>
+  <button id="myButton">Click Me</button>
+  <script>
+    console.log('Script loaded');
+
+    document.getElementById('myButton').addEventListener('click', () => {
+      console.log('Button was clicked');
+    });
+
+    console.log('Event listener added');
+  </script>
+</body>
+</html>
+*/
+
+// Example 4: Using setInterval for Repeated Execution
+console.log('Start');
+
+let counter = 0;
+const intervalId = setInterval(() => {
+  counter += 1;
+  console.log(`Counter: ${counter}`);
+
+  if (counter >= 5) {
+    clearInterval(intervalId);
+    console.log('Interval cleared');
+  }
+}, 1000);
+
+console.log('End');
+
+// Example 5: Combining Asynchronous Operations
+console.log('Start fetching data');
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Data fetched:', data);
+
+    setTimeout(() => {
+      console.log('This message is shown after data fetch and 3 seconds delay');
+    }, 3000);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+console.log('End of script');
