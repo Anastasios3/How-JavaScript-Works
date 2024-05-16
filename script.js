@@ -33,7 +33,7 @@
 </html>
 
 */
-
+/*
 // Διαδικαστικός Προγραμματισμός (Procedural Programming)
 function calculateSum(numbers) {
   let total = 0;
@@ -116,7 +116,7 @@ console.log('End');
 </body>
 </html>
 */
-
+/*
 // Example 4: Using setInterval for Repeated Execution
 console.log('Start');
 
@@ -150,3 +150,80 @@ fetch('https://jsonplaceholder.typicode.com/posts')
   });
 
 console.log('End of script');
+
+// 1. Global Scope
+const me = 'Jonas';
+const job = 'teacher';
+const year = 1989;
+
+function logJob() {
+  console.log(`My job is ${job}`);
+}
+
+logJob(); // My job is teacher
+console.log(me); // Jonas
+console.log(year); // 1989
+
+// 2. Function Scope
+function calcAge(birthYear) {
+  const now = 2037;
+  const age = now - birthYear;
+  return age;
+}
+
+console.log(calcAge(1990)); // 47
+// console.log(now); // ReferenceError: now is not defined
+// console.log(age); // ReferenceError: age is not defined
+
+// 3. Block Scope (ES6)
+if (true) {
+  const millennial = true;
+  const food = 'Avocado toast';
+  console.log(millennial); // true
+  console.log(food); // Avocado toast
+}
+
+// console.log(millennial); // ReferenceError: millennial is not defined
+// console.log(food); // ReferenceError: food is not defined
+
+// Example with `let` in a loop
+for (let i = 0; i < 3; i++) {
+  console.log(`Iteration ${i}`);
+}
+// console.log(i); // ReferenceError: i is not defined
+
+// Example with `var` in a block
+{
+  var globalVar = 'I am global';
+}
+console.log(globalVar); // I am global
+*/
+
+function calcAge(birthYear) {
+  const age = 2024 - birthYear;
+
+  function printAge() {
+    const output = `${firstName}, you are ${age}, born in ${birthYear}`;
+    console.log(output);
+
+    if (birthYear >= 1981 && birthYear <= 1996) {
+      const str = `Oh, and you are a millenial, ${firstName}`;
+      console.log(str);
+    }
+  }
+  printAge();
+
+  return age;
+}
+
+const firstName = 'Anastasios';
+calcAge(1994);
+
+console.log(a); // undefined (due to hoisting)
+var a = 10;
+
+console.log(b); // ReferenceError: Cannot access 'b' before initialization
+let b = 20;
+
+console.log(c); // ReferenceError: Cannot access 'c' before initialization
+const c = 30;
