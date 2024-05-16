@@ -199,31 +199,80 @@ for (let i = 0; i < 3; i++) {
 console.log(globalVar); // I am global
 */
 
-function calcAge(birthYear) {
-  const age = 2024 - birthYear;
+// function calcAge(birthYear) {
+//   const age = 2024 - birthYear;
 
-  function printAge() {
-    const output = `${firstName}, you are ${age}, born in ${birthYear}`;
-    console.log(output);
+//   function printAge() {
+//     const output = `${firstName}, you are ${age}, born in ${birthYear}`;
+//     console.log(output);
 
-    if (birthYear >= 1981 && birthYear <= 1996) {
-      const str = `Oh, and you are a millenial, ${firstName}`;
-      console.log(str);
-    }
-  }
-  printAge();
+//     if (birthYear >= 1981 && birthYear <= 1996) {
+//       const str = `Oh, and you are a millenial, ${firstName}`;
+//       console.log(str);
+//     }
+//   }
+//   printAge();
 
-  return age;
-}
+//   return age;
+// }
 
-const firstName = 'Anastasios';
-calcAge(1994);
+// const firstName = 'Anastasios';
+// calcAge(1994);
 
-console.log(a); // undefined (due to hoisting)
-var a = 10;
+// console.log(a); // undefined (due to hoisting)
+// var a = 10;
 
-console.log(b); // ReferenceError: Cannot access 'b' before initialization
-let b = 20;
+// console.log(b); // ReferenceError: Cannot access 'b' before initialization
+// let b = 20;
 
-console.log(c); // ReferenceError: Cannot access 'c' before initialization
-const c = 30;
+// console.log(c); // ReferenceError: Cannot access 'c' before initialization
+// const c = 30;
+// //
+// let age = 30;
+// let oldAge = age;
+// age = 31;
+// console.log(age);
+// console.log(oldAge);
+
+// const me = {
+//   name: 'Jonas',
+//   age: 30,
+// };
+
+// const friend = me;
+// friend.age = 27;
+// console.log('Friend:', friend);
+// console.log('Me:', me);
+
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+const jessica = {
+  firstanem: 'Jessica',
+  lastname: 'Williams',
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastname = 'Davis';
+console.log('Before mariege: ', jessica);
+console.log('After mariege: ', marriedJessica);
+
+const jessica2 = {
+  firstanem: 'Jessica',
+  lastname: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastname = 'Davis';
+console.log('Before marriege:', jessica2);
+console.log('After marriege: ', jessicaCopy);
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log('Before marriege:', jessica2);
+console.log('After marriege: ', jessicaCopy);
